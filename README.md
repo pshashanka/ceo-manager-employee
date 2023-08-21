@@ -1,17 +1,5 @@
-# React Tailwindcss Boilerplate
+# CEO Manager Employee
 
-This is a [React](https://react.org) boilerplate to be used with [Tailwindcss](https://tailwindcss.com).
-
-## What is inside?
-
-This project uses lot of stuff as:
-
-- [ReactJS](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Tailwindcss](https://tailwindcss.com)
-- [Jest](https://jestjs.io)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
 
 ## Getting Started
 
@@ -20,13 +8,13 @@ This project uses lot of stuff as:
 Cloning the project.
 
 ```bash
-git clone https://github.com/joaopaulomoraes/react-tailwindcss-boilerplate.git react-tailwindcss-boilerplate
+git clone https://github.com/pshashanka/ceo-manager-employee
 ```
 
 Access the project directory.
 
 ```bash
-cd react-tailwindcss-boilerplate
+cd ceo-manager-employee
 ```
 
 Install dependencies.
