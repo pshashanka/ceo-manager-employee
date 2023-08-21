@@ -3,6 +3,6 @@ import App from './App'
 
 test('renders learn react link', () => {
   render(<App />)
-  const linkElement = screen.getByRole('link', { name: /read the docs →/i })
+  const linkElement = screen.getByLabelText('Choose a Role:')
   expect(linkElement).toBeInTheDocument()
 })

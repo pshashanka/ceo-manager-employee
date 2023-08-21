@@ -18,21 +18,25 @@ This project uses lot of stuff as:
 ### Installing
 
 Cloning the project.
+
 ```bash
 git clone https://github.com/joaopaulomoraes/react-tailwindcss-boilerplate.git react-tailwindcss-boilerplate
 ```
 
 Access the project directory.
+
 ```bash
 cd react-tailwindcss-boilerplate
 ```
 
 Install dependencies.
+
 ```
 yarn install
 ```
 
 Serve with hot reload at http://localhost:3000.
+
 ```
 yarn start
 ```
