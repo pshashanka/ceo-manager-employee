@@ -8,8 +8,7 @@ export const initialState: ApplicationState = {
 export const reducer = (state: ApplicationState, action: ApplicationAction) => {
   switch (action.type) {
     case 'role':
-      console.log('new State ', state)
-      return { ...state, role: state.role }
+      return { ...state, ...action.payload }
     default:
       throw new Error()
   }

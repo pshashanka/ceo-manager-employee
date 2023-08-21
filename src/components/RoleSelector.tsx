@@ -10,7 +10,12 @@ const RoleSelector: React.FC<RoleProps> = ({ role, onChange }) => (
   <div>
     <label htmlFor="roles">Choose a Role:</label>
 
-    <select name="roles" id="roles" value={role}>
+    <select
+      name="roles"
+      id="roles"
+      value={role}
+      onChange={(e) => onChange(e.target.value as unknown as Role)}
+    >
       {Roles.map((r, index) => (
         <option key={index} value={r}>
           {r}
