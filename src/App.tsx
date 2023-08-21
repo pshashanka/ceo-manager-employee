@@ -1,18 +1,66 @@
 import React, { useReducer } from 'react'
 import RoleSelector from './components/RoleSelector'
-import { reducer, initialState } from 'reducer/initialstate'
+import EmployeeScreen from './components/EmployeeScreen'
+import ManagerScreen from './components/ManagerScreen'
+import CEOScreen from './components/CEOScreen'
+
+import { reducer, initialState, initFunc } from 'reducer/AppState'
+import createPayLoad from 'reducer/CreatePayLoad'
+import { Approval, Role } from './types/models'
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState, initFunc)
   return (
-    <div className="flex flex-col justify-center py-6 sm:py-12 min-h-screen bg-gray-100">
-      <div className="relative py-3 sm:mx-auto sm:max-w-xl">
-        <div className="relative sm:p-20 py-10 px-4 bg-white sm:rounded-3xl shadow-lg">
-          <RoleSelector
+    <div>
+      <div>
+        <RoleSelector
+          role={state.role}
+          onChange={(role) =>
+            dispatch({ type: 'role', payload: createPayLoad({ role }) })
+          }
+        />
+        {state.role === Role.Employee && (
+          <EmployeeScreen
             role={state.role}
-            onChange={(role) => dispatch({ type: 'role', payload: { role } })}
+            documents={state.documents}
+            createDocument={(document) =>
+              dispatch({
+                type: 'document',
+                payload: createPayLoad({ documents: [document] })
+              })
+            }
           />
-        </div>
+        )}
+        {state.role === Role.Manager && (
+          <ManagerScreen
+            role={state.role}
+            documents={state.documents}
+            approvals={state.approvals}
+            approveDocument={(approval: Approval) =>
+              dispatch({
+                type: 'approval',
+                payload: createPayLoad({
+                  approvals: [approval]
+                })
+              })
+            }
+          />
+        )}
+        {state.role === Role.CEO && (
+          <CEOScreen
+            role={state.role}
+            documents={state.documents}
+            approvals={state.approvals}
+            approveDocument={(approval: Approval) =>
+              dispatch({
+                type: 'approval',
+                payload: createPayLoad({
+                  approvals: [approval]
+                })
+              })
+            }
+          />
+        )}
       </div>
     </div>
   )

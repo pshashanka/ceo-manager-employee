@@ -35,10 +35,17 @@ export interface Approval {
 
 export interface ApplicationState {
   role: Role
+  documents: Document[]
+  approvals: Approval[]
+}
+
+export interface ApplicationPayload {
+  role?: Role
   documents?: Document[]
+  approvals?: Approval[]
 }
 
 export interface ApplicationAction {
-  type: string
+  type: 'role' | 'document' | 'approval'
   payload: ApplicationState
 }
